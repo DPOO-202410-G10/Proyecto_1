@@ -5,7 +5,6 @@ import usuarios.Propietario;
 
 public class Pintura extends Pieza{
 	
-	
 	private String tecnica;
 	private String tipo;
 	private float peso;
@@ -37,9 +36,5 @@ public class Pintura extends Pieza{
 		this.tipo=tipo;
 		this.peso=peso;
 		
-	}
-	
-	
-	
-
+}
 }
