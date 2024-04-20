@@ -6,8 +6,8 @@ public abstract class Pieza {
 	protected String idPieza;
 	protected String titulo;
 	protected String lugarCreacion;
-	protected float ancho;
-	protected float alto;
+	protected double ancho;
+	protected double alto;
 	protected String fechaLimite;
 	protected boolean valorFijo;
 	protected Propietario propietario;
@@ -33,13 +33,13 @@ public abstract class Pieza {
 	public void setLugarCreacion(String lugarCreacion) {
 		this.lugarCreacion = lugarCreacion;
 	}
-	public float getAncho() {
+	public double getAncho() {
 		return ancho;
 	}
 	public void setAncho(float ancho) {
 		this.ancho = ancho;
 	}
-	public float getAlto() {
+	public double getAlto() {
 		return alto;
 	}
 	public void setAlto(float alto) {
@@ -51,8 +51,8 @@ public abstract class Pieza {
 	public void setPropietario(Propietario propietario) {
 		this.propietario = propietario;
 	}
-	public Pieza(String idPieza, String titulo, String lugarCreacion, float ancho, float alto, String fechaLimite,
-			boolean valorFijo, Propietario propietario) {
+	public Pieza(String idPieza, String idPropietario, String titulo, String lugarCreacion, double ancho, double alto, String fechaLimite,
+			boolean valorFijo, double valorInicial, String autores, String anioCreacion) {
 		super();
 		this.idPieza = idPieza;
 		this.titulo = titulo;

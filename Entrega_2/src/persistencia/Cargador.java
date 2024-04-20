@@ -45,7 +45,7 @@ public class Cargador {
 		
 		while(linea != null) {
 			Cliente cliente = new Cliente(linea[0], linea[1], linea[2], 
-								Boolean.parseBoolean(linea[3])), linea[4], linea[5], 
+								Boolean.parseBoolean(linea[3]), linea[4], linea[5], 
 								Integer.parseInt(linea[6]));
 			clientes.put(linea[0], cliente);
 			linea = br.readLine().split(";");
@@ -70,7 +70,7 @@ public class Cargador {
 				Cajero empleado = new Cajero(linea[0], linea[1], linea[2]);
 				cajerosCarga.put(linea[0], empleado);
 			} else if(linea[3].equals("Operador")) {
-				Operador empleado = new Cajero(linea[0], linea[1], linea[2]);
+				Operador empleado = new Operador(linea[0], linea[1], linea[2]);
 				operadoresCarga.put(linea[0], empleado);
 			}
 			linea = br.readLine().split(";");
@@ -98,21 +98,21 @@ public class Cargador {
 			case "pintura":
 				pieza = new Pintura(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
 							Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), 
-							Double.parseDouble(linea[8]), linea[9], caracteristicas[0], caracteristicas[1],
+							Double.parseDouble(linea[8]), linea[9], linea[10], caracteristicas[0], caracteristicas[1],
 							caracteristicas[2]);
 			case "escultura":
 				pieza = new Escultura(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
 							Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), 
-							Double.parseDouble(linea[8]), linea[9], caracteristicas[0], caracteristicas[1],
+							Double.parseDouble(linea[8]), linea[9], linea[10], caracteristicas[0], caracteristicas[1],
 							caracteristicas[2]);
 			case "fotografia":
 				pieza = new Fotografia(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
 							Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), 
-							Double.parseDouble(linea[8]), linea[9], caracteristicas[0]);
+							Double.parseDouble(linea[8]), linea[9], linea[10], caracteristicas[0]);
 			case "impresion":
 				pieza = new Pintura(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
 							Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), 
-							Double.parseDouble(linea[8]), linea[9], caracteristicas[0], caracteristicas[1],
+							Double.parseDouble(linea[8]), linea[9], linea[10], caracteristicas[0], caracteristicas[1],
 							caracteristicas[2]);
 			}
 			
