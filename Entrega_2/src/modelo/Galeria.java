@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import persistencia.Cargador;
+import persistencia.Guardador;
 import usuarios.Administrador;
 import usuarios.Cajero;
 import usuarios.Cliente;
@@ -86,20 +87,38 @@ public class Galeria {
 	
 //< Adders >=====================================================================================================x>
 	public void addUsuario(Usuario usuario, String tipo) {
-		switch (tipo) {
-		case "Cliente":
-			this.clientes.put(usuario.getID(), usuario);
-		case "Cajero":
-			this.cajeros.put(usuario.getID(), usuario);
-		case "Operador":
-			this.operadores.put(usuario.getID(), usuario);
-		case "Propietario":
-			this.propietarios.put(usuario.getID, usuario);
+		try {
+			switch (tipo) {
+			case "Cliente":
+				this.clientes.put(usuario.getID(), usuario);
+				Guardador.guardarClientes(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "clientes.csv", 
+					this.clientes.values());
+			case "Cajero":
+				this.cajeros.put(usuario.getID(), usuario);
+				Guardador.guardarEmpleados(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "empleados.csv",
+					this.cajeros.values(), this.operadores.values());
+			case "Operador":
+				this.operadores.put(usuario.getID(), usuario);
+				Guardador.guardarEmpleados(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "empleados.csv",
+					this.cajeros.values(), this.operadores.values());
+			case "Propietario":
+				this.propietarios.put(usuario.getID, usuario);
+				Guardador.guardarPropietarios(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "propietarios.csv",
+					this.propietarios.values());
+			}
+		} catch(Exception e) {
+			e.getMessage();
 		}
 	}
 	
 	public void addPieza(Pieza pieza) {
 		this.inventario.addPieza(pieza);
+	}
+	
+	public void addPago(Pago pago) {
+		this.pagos.put(pago.getID, pago);
+		Guardador.guardarPagos(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "pagos.csv",
+				this.pagos.values());
 	}
 //<x=============================================================================================================x>
 }
