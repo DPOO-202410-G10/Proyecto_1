@@ -16,9 +16,11 @@ public class Cliente extends Usuario{
 	public Cliente(String idUsuario, String contrasenia, String nombre) {
 		super(idUsuario, contrasenia, nombre);
 	}
-	
-	
-	public void setNumCompras(int numeroNuevo) {
-		//TODO: FALTA CREAR METODO
+
+	public void setNumCompras(int numCompras) {
+		this.numCompras = numCompras;
 	}
+	
+	
+	
 }
