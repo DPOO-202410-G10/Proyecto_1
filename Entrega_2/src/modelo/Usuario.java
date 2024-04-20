@@ -13,6 +13,22 @@ public abstract class Usuario {
 	}
 	
 	protected void login() {
-		//TODO: FALTA CREAR METODO
+		if (idUsuario == getIdUsuario() && contrasenia == getContrasenia() && nombre == getNombre()) {
+			System.out.println("Login aceptado.");
+		}else {
+			System.out.println("Login rechazado.");
+		}
+	}
+
+	public String getIdUsuario() {
+		return idUsuario;
+	}
+
+	public String getContrasenia() {
+		return contrasenia;
+	}
+
+	public String getNombre() {
+		return nombre;
 	}
 }
