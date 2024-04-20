@@ -20,15 +20,15 @@ public class Administrador extends Usuario {
 	}
 	
 	public void registrarPieza() {
-		System.out.println("Pieza registrada exitosamente en el inventario.");
+		//TODO: FALTA CREAR METODO
 	}
 	
 	public void confirmarVenta() {
-		System.out.println("Venta confirmada.");
+		//TODO: FALTA CREAR METODO
 	}
 	
 	public void regresarPieza() {
-		System.out.println("Pieza devuelta");
+		//TODO: FALTA CREAR METODO
 	}
 	
 	public int aumentarNumComprasCliente(Cliente cliente) {
