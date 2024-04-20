@@ -4,6 +4,7 @@ import java.util.Map;
 
 import modelo.Pieza;
 import modelo.Usuario;
+import usuarios.Cliente;
 
 public class Administrador extends Usuario {
 
@@ -32,7 +33,13 @@ public class Administrador extends Usuario {
 	}
 	
 	public int aumentarNumComprasCliente(Cliente cliente) {
-		return 0;
-		//TODO: FALTA CREAR MÉTODO!
+		int cantidadCompras = cliente.getNumCompras();
+		if (cliente.verificacion == true) {
+			cantidadCompras++;
+		}else {
+			System.out.println("Aumento de compras rechazado.");
+		}return cantidadCompras;
+		
+
 	}
 }

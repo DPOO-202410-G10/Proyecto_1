@@ -7,7 +7,8 @@ public class Cliente extends Usuario{
 	private boolean esPropietario;
 	private String telefono;
 	private String direccion;
-	private int numCompras;
+	public int numCompras;
+	public boolean verificacion;
 	
 	public String idUsuario;
 	public String contrasenia;
@@ -17,9 +18,14 @@ public class Cliente extends Usuario{
 		super(idUsuario, contrasenia, nombre);
 	}
 
+	public int getNumCompras() {
+		return numCompras;
+	}
+
 	public void setNumCompras(int numCompras) {
 		this.numCompras = numCompras;
 	}
+
 	
 	
 	
