@@ -10,9 +10,7 @@ public class Cajero extends Usuario {
 	public String nombre;
 	
 	public Cajero(String idUsuario, String contrasenia, String nombre) {
-		this.idUsuario = idUsuario;
-		this.contrasenia = contrasenia;
-		this.nombre = nombre;
+		super(idUsuario, contrasenia, nombre);
 	}
 	
 	public void generarPago(Cliente cliente, Pieza piezas) {

@@ -7,19 +7,15 @@ import modelo.Usuario;
 
 public class Propietario extends Usuario{
 
+	public Propietario(String idUsuario, String contrasenia, String nombre) {
+		super(idUsuario, contrasenia, nombre);
+	}
+
 	private boolean esComprador;
 	private String telefono;
 	private String direccion;
 	
-	public String idUsuario;
-	public String contrasenia;
-	public String nombre;
 	
-	public Propietario(String idUsuario, String contrasenia, String nombre) {
-		this.idUsuario = idUsuario;
-		this.contrasenia = contrasenia;
-		this.nombre = nombre;
-	}
 	
 	public List<Pieza> consultarPiezasBajoDominio(){
 		return null;

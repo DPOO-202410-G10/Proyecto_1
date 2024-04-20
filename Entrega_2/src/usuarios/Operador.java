@@ -9,9 +9,7 @@ public class Operador extends Usuario{
 	public String nombre;
 	
 	public Operador(String idUsuario, String contrasenia, String nombre) {
-		this.idUsuario = idUsuario;
-		this.contrasenia = contrasenia;
-		this.nombre = nombre;
+		super(idUsuario, contrasenia, nombre);
 	}
 	
 	public void crearHistorial(String tituloPieza) {
