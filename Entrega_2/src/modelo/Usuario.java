@@ -6,7 +6,7 @@ public abstract class Usuario {
 	protected String contrasenia;
 	protected String nombre;
 	
-	protected Usuario(String idUsuario, String contrasenia, String nombre) {
+	public Usuario(String idUsuario, String contrasenia, String nombre) {
 		this.idUsuario = idUsuario;
 		this.contrasenia = contrasenia;
 		this.nombre = nombre;
