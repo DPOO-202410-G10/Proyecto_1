@@ -14,12 +14,7 @@ public abstract class Pieza {
 	
 	
 	
-	public Propietario getPropietario() {
-		return propietario;
-	}
-	public void setPropietario(Propietario propietario) {
-		this.propietario = propietario;
-	}
+	
 	public String getIdPieza() {
 		return idPieza;
 	}
@@ -50,13 +45,15 @@ public abstract class Pieza {
 	public void setAlto(float alto) {
 		this.alto = alto;
 	}
-	
-	
-	
-	
+	public Propietario getPropietario() {
+		return propietario;
+	}
+	public void setPropietario(Propietario propietario) {
+		this.propietario = propietario;
+	}
 	public Pieza(String idPieza, String titulo, String lugarCreacion, float ancho, float alto, String fechaLimite,
-			boolean valorFijo) {
-		
+			boolean valorFijo, Propietario propietario) {
+		super();
 		this.idPieza = idPieza;
 		this.titulo = titulo;
 		this.lugarCreacion = lugarCreacion;
@@ -64,14 +61,9 @@ public abstract class Pieza {
 		this.alto = alto;
 		this.fechaLimite = fechaLimite;
 		this.valorFijo = valorFijo;
-		this.propietario=propietario;
+		this.propietario = propietario;
 	}
 	
 	
-	
-	
-	
-	
-
 
 }
