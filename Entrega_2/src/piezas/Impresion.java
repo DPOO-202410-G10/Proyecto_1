@@ -24,4 +24,5 @@ public class Impresion extends Pieza{
 	
 	
 
+	
 }
