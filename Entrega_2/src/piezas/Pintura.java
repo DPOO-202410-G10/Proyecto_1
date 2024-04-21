@@ -31,7 +31,7 @@ public class Pintura extends Pieza{
 		this.peso = peso;
 	}
 	public Pintura(String idPieza, Propietario propietario,  String titulo,String lugarCreacion, double ancho, double alto, String fechaLimite,
-			boolean valorFijo, boolean valorinicial, List<String> autores,
+			boolean valorFijo, double valorinicial, List<String> autores,
 			Propietario anioCreacion, String tecnica, String tipo, double peso) {
 		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorinicial, autores, propietario,
 				anioCreacion);
@@ -41,6 +41,4 @@ public class Pintura extends Pieza{
 		this.peso=peso;
 	}
 	
-		
-		
 }

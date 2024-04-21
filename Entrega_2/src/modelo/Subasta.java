@@ -1,17 +1,34 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Subasta {
 	
-	private List Historial;
+	
+	private String idSubasta;
+	private Pieza pieza;
+	
+	
+	
+	
+	public Subasta(String idSubasta, Pieza pieza) {
 
-	public Subasta(List historial) {
-
-		this.Historial= new ArrayList<>();
-		
+		this.idSubasta = idSubasta;
+		this.pieza = pieza;
 	}
+	
+	
+	
+	
+	
+			
+	
 	
 	
 
 }
+
+
+
+
