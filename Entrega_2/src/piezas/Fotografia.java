@@ -17,7 +17,7 @@ public class Fotografia extends Pieza{
 	}
 
 	public Fotografia(String idPieza, Propietario propietario,  String titulo,String lugarCreacion, double ancho, double alto, String fechaLimite,
-			boolean valorFijo, boolean valorinicial, List<String> autores,
+			boolean valorFijo, double valorinicial, List<String> autores,
 			Propietario anioCreacion, String tipo) {
 		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorinicial, autores, propietario,
 				anioCreacion);
