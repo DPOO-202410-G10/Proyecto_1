@@ -14,8 +14,14 @@ public class Cliente extends Usuario{
 	public String contrasenia;
 	public String nombre;
 	
-	public Cliente(String idUsuario, String contrasenia, String nombre, Boolean esPropietario, String telefono, String direccion, int numCompras) {
+	public Cliente(String idUsuario, String contrasenia, String nombre, boolean esPropietario, String telefono, String direccion, int numCompras
+			, boolean verificacion) {
 		super(idUsuario, contrasenia, nombre);
+		this.esPropietario = esPropietario;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.numCompras = numCompras;
+		this.verificacion = verificacion;
 	}
 
 	public int getNumCompras() {

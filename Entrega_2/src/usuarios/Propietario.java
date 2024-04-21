@@ -9,13 +9,22 @@ import modelo.Usuario;
 public class Propietario extends Usuario{
 
 	public Propietario(String idUsuario, String contrasenia, String nombre, 
-			Boolean esComprador, String telefono, String direccion, Map<String, Map<String, Pieza>> piezas) {
+			boolean esComprador, String telefono, String direccion, Map<String, Map<String, Pieza>> piezas) {
 		super(idUsuario, contrasenia, nombre);
+		this.esComprador = esComprador;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.piezas = piezas;
 	}
 
 	private boolean esComprador;
 	private String telefono;
 	private String direccion;
+	private Map<String, Map<String, Pieza>> piezas;
+	
+	public String idUsuario;
+	public String contrasenia;
+	public String nombre;
 	
 	
 	
