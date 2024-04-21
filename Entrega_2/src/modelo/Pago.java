@@ -1,13 +1,12 @@
 package modelo;
 
 import usuarios.Cliente;
-import usuarios.Propietario;
 
 public class Pago {
 	private String idPago;
 	private String fecha;
 	private int iva;
-	private double precioFinal;
+	private float precioFinal;
 	private Pieza pieza;
 	private Cliente cliente;
 	
@@ -32,7 +31,7 @@ public class Pago {
 	public void setIva(int iva) {
 		this.iva = iva;
 	}
-	public double getPrecioFinal() {
+	public float getPrecioFinal() {
 		return precioFinal;
 	}
 	public void setPrecioFinal(float precioFinal) {
@@ -52,8 +51,8 @@ public class Pago {
 	}
 	
 	
-	public Pago(String idPago, Cliente cliente, Pieza pieza, String fecha, int iva, double precioFinal) {
-		super();
+	public Pago(String idPago, String fecha, int iva, float precioFinal, Pieza pieza, Cliente cliente) {
+
 		this.idPago = idPago;
 		this.fecha = fecha;
 		this.iva = iva;

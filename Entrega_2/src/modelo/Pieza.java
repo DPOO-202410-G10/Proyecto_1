@@ -12,8 +12,11 @@ public abstract class Pieza {
 	protected double alto;
 	protected String fechaLimite;
 	protected boolean valorFijo;
-	protected String idPropietario;
-	protected String[] autores;
+	protected double valorinicial;
+	protected List<String> autores;
+	protected Propietario propietario;
+	protected Propietario anioCreacion;
+	
 	
 	
 	
@@ -23,41 +26,92 @@ public abstract class Pieza {
 	public void setIdPieza(String idPieza) {
 		this.idPieza = idPieza;
 	}
+	
+	
 	public String getTitulo() {
 		return titulo;
 	}
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+	
+	
 	public String getLugarCreacion() {
 		return lugarCreacion;
 	}
 	public void setLugarCreacion(String lugarCreacion) {
 		this.lugarCreacion = lugarCreacion;
 	}
+	
+	
 	public double getAncho() {
 		return ancho;
 	}
 	public void setAncho(float ancho) {
 		this.ancho = ancho;
 	}
+	
+	
 	public double getAlto() {
 		return alto;
 	}
 	public void setAlto(float alto) {
 		this.alto = alto;
 	}
-	public String getPropietario() {
-		return this.idPropietario;
+	
+	public String getFechaLimite() {
+		return fechaLimite;
 	}
-	public void setPropietario(String idPropietario) {
-		this.idPropietario = idPropietario;
+	public void setFechaLimite(String fechaLimite) {
+		this.fechaLimite = fechaLimite;
+	}
+	
+	public Propietario getAnioCreacion() {
+		return anioCreacion;
+	}
+	public void setAnioCreacion(Propietario anioCreacion) {
+		this.anioCreacion = anioCreacion;
+	}
+	public boolean isValorFijo() {
+		return valorFijo;
+	}
+	public void setValorFijo(boolean valorFijo) {
+		this.valorFijo = valorFijo;
+	}
+
+	public double isValorinicial() {
+		return valorinicial;
+	}
+	public void setValorinicial(double valorinicial) {
+		this.valorinicial = valorinicial;
 	}
 	
 	
 	
-	public Pieza(String idPieza, String idPropietario, String titulo, String lugarCreacion, double ancho, double alto, String fechaLimite,
-			boolean valorFijo, double valorInicial, String[] autores, String anioCreacion) {
+	
+	
+	
+	
+	public List<String> getAutores() {
+		return autores;
+	}
+	public void setAutores(List<String> autores) {
+		this.autores = autores;
+	}
+	
+	
+	
+	
+	
+	public Propietario getPropietario() {
+		return propietario;
+	}
+	public void setPropietario(Propietario propietario) {
+		this.propietario = propietario;
+	}
+	public Pieza(String idPieza, String titulo, String lugarCreacion, double ancho, double alto, String fechaLimite,
+			boolean valorFijo, double valorinicial, List<String> autores, Propietario propietario,
+			Propietario anioCreacion) {
 		super();
 		this.idPieza = idPieza;
 		this.titulo = titulo;
@@ -66,8 +120,17 @@ public abstract class Pieza {
 		this.alto = alto;
 		this.fechaLimite = fechaLimite;
 		this.valorFijo = valorFijo;
-		this.idPropietario = idPropietario;
+		this.valorinicial = valorinicial;
+		this.autores = autores;
+		this.propietario = propietario;
+		this.anioCreacion = anioCreacion;
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 
