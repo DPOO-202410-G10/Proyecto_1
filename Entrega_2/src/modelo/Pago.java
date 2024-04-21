@@ -7,7 +7,7 @@ public class Pago {
 	private String idPago;
 	private String fecha;
 	private int iva;
-	private float precioFinal;
+	private double precioFinal;
 	private Pieza pieza;
 	private Cliente cliente;
 	
@@ -32,7 +32,7 @@ public class Pago {
 	public void setIva(int iva) {
 		this.iva = iva;
 	}
-	public float getPrecioFinal() {
+	public double getPrecioFinal() {
 		return precioFinal;
 	}
 	public void setPrecioFinal(float precioFinal) {
@@ -52,7 +52,7 @@ public class Pago {
 	}
 	
 	
-	public Pago(String idPago, String fecha, int iva, float precioFinal, Pieza pieza, Cliente cliente) {
+	public Pago(String idPago, Cliente cliente, Pieza pieza, String fecha, int iva, double precioFinal) {
 		super();
 		this.idPago = idPago;
 		this.fecha = fecha;

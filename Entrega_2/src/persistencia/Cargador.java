@@ -11,6 +11,7 @@ import modelo.Pago;
 import modelo.Pieza;
 import piezas.Escultura;
 import piezas.Fotografia;
+import piezas.Impresion;
 import piezas.Pintura;
 import usuarios.Administrador;
 import usuarios.Cajero;
@@ -19,7 +20,7 @@ import usuarios.Operador;
 import usuarios.Propietario;
 
 public class Cargador {
-	public void Cargador() {
+	public Cargador() {
 	}
 	
 //< Carga de Datos Individuales >================================================================================x>
@@ -93,27 +94,25 @@ public class Cargador {
 		
 		while(linea != null) {
 			String[] caracteristicas = linea[12].split(",");
-			Pieza pieza;
+			Pieza pieza = null;
 			switch (linea[11].toLowerCase()) {
 			case "pintura":
 				pieza = new Pintura(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
-							Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), 
-							Double.parseDouble(linea[8]), linea[9], linea[10], caracteristicas[0], caracteristicas[1],
-							caracteristicas[2]);
+						Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), Double.parseDouble(linea[8]),
+						linea[9].split(","), linea[10], caracteristicas[0], caracteristicas[1], Double.parseDouble(caracteristicas[2]));
 			case "escultura":
 				pieza = new Escultura(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
-							Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), 
-							Double.parseDouble(linea[8]), linea[9], linea[10], caracteristicas[0], caracteristicas[1],
-							caracteristicas[2]);
+						Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), Double.parseDouble(linea[8]),
+						linea[9].split(","), linea[10], Double.parseDouble(caracteristicas[0]), caracteristicas[1].split(","),
+						Boolean.parseBoolean(caracteristicas[2]));
 			case "fotografia":
 				pieza = new Fotografia(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
-							Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), 
-							Double.parseDouble(linea[8]), linea[9], linea[10], caracteristicas[0]);
+						Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), Double.parseDouble(linea[8]),
+						linea[9].split(","), linea[10], caracteristicas[0]);
 			case "impresion":
-				pieza = new Pintura(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
-							Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), 
-							Double.parseDouble(linea[8]), linea[9], linea[10], caracteristicas[0], caracteristicas[1],
-							caracteristicas[2]);
+				pieza = new Impresion(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
+						Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), Double.parseDouble(linea[8]),
+						linea[9].split(","), linea[10], caracteristicas[0]);
 			}
 			
 			if (piezasCargar.get(linea[12]) != null) {
@@ -125,6 +124,8 @@ public class Cargador {
 			linea = br.readLine().split(";");
 		}
 		br.close();
+		
+		return piezasCargar;
 	}
 	
 	
