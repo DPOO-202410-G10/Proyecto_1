@@ -13,7 +13,7 @@ public abstract class Usuario {
 	}
 	
 	protected void login() {
-		if (idUsuario == getId() && contrasenia == getContrasenia() && nombre == getNombre()) {
+		if (idUsuario == getID() && contrasenia == getContrasenia() && nombre == getNombre()) {
 			System.out.println("Login aceptado.");
 		}else {
 			System.out.println("Login rechazado.");
