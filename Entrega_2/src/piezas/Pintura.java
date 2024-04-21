@@ -41,4 +41,8 @@ public class Pintura extends Pieza{
 		this.peso=peso;
 	}
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> refs/heads/main

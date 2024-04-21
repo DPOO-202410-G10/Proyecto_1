@@ -29,9 +29,6 @@ public class Fotografia extends Pieza{
 	
 	}
 
-	
-
-
 
 
 
