@@ -91,10 +91,11 @@ public class Cargador {
 		
 		FileReader file = new FileReader(rutaArchivo);
 		BufferedReader br = new BufferedReader(file);
-		String[] linea = br.readLine().split(";");
-		linea = br.readLine().split(";");
+		String l = br.readLine(); l = br.readLine();
+		String[] linea;
 		
-		while(linea != null) {
+		while(l != null) {
+			linea = l.split(";");
 			String[] caracteristicas = linea[12].split(",");
 			Pieza pieza = null;
 			switch (linea[11].toLowerCase()) {
@@ -102,28 +103,32 @@ public class Cargador {
 				pieza = new Pintura(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
 						Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), Double.parseDouble(linea[8]),
 						linea[9].split(","), linea[10], caracteristicas[0], caracteristicas[1], Double.parseDouble(caracteristicas[2]));
+				break;
 			case "escultura":
 				pieza = new Escultura(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
 						Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), Double.parseDouble(linea[8]),
 						linea[9].split(","), linea[10], Double.parseDouble(caracteristicas[0]), caracteristicas[1].split(","),
 						Boolean.parseBoolean(caracteristicas[2]));
+				break;
 			case "fotografia":
 				pieza = new Fotografia(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
 						Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), Double.parseDouble(linea[8]),
 						linea[9].split(","), linea[10], caracteristicas[0]);
+				break;
 			case "impresion":
 				pieza = new Impresion(linea[0], linea[1], linea[2], linea[3], Double.parseDouble(linea[4]),
 						Double.parseDouble(linea[5]), linea[6], Boolean.parseBoolean(linea[7]), Double.parseDouble(linea[8]),
 						linea[9].split(","), linea[10], caracteristicas[0]);
+				break;
 			}
 			
-			if (piezasCargar.get(linea[12]) != null) {
-				piezasCargar.get(linea[12]).put(linea[0], pieza);
+			if (piezasCargar.get(linea[13]) != null) {
+				piezasCargar.get(linea[13]).put(linea[0], pieza);
 			} else {
-				piezasCargar.put(linea[12], new HashMap<String, Pieza>());
-				piezasCargar.get(linea[12]).put(linea[0], pieza);
+				piezasCargar.put(linea[13], new HashMap<String, Pieza>());
+				piezasCargar.get(linea[13]).put(linea[0], pieza);
 			}
-			linea = br.readLine().split(";");
+			l = br.readLine();
 		}
 		br.close();
 		
@@ -138,10 +143,11 @@ public class Cargador {
 		
 		FileReader file = new FileReader(rutaArchivo);
 		BufferedReader br = new BufferedReader(file);
-		String[] linea = br.readLine().split(";");
-		linea = br.readLine().split(";");
+		String l = br.readLine(); l = br.readLine();
+		String[] linea;
 		
-		while(linea != null) {
+		while(l != null) {
+			linea = l.split(";");
 			Map<String, Map<String, Pieza>> piezasHistorial = new HashMap<String, Map<String, Pieza>>();
 			Map<String, Pieza> antiguas = new HashMap<String, Pieza>();
 			Map<String, Pieza> actuales = new HashMap<String, Pieza>();
@@ -159,7 +165,7 @@ public class Cargador {
 			Propietario propietario = new Propietario(linea[0], linea[1], linea[2],
 										Boolean.valueOf(linea[3]), linea[4], linea[5], piezasHistorial);
 			propietarios.put(linea[0], propietario);
-			linea = br.readLine().split(";");
+			l = br.readLine();
 		}
 		br.close();
 		
@@ -173,14 +179,15 @@ public class Cargador {
 		
 		FileReader file = new FileReader(rutaArchivo);
 		BufferedReader br = new BufferedReader(file);
-		String[] linea = br.readLine().split(";");
-		linea = br.readLine().split(";");
+		String l = br.readLine(); l = br.readLine();
+		String[] linea;
 		
-		while(linea != null) {
+		while(l != null) {
+			linea = l.split(";");
 			Pago pago = new Pago(linea[0], clientes.get(linea[1]), inventario.getPieza(linea[2]),
 							linea[3], Integer.parseInt(linea[4]), Double.parseDouble(linea[5]));
 			pagos.put(linea[0], pago);
-			linea = br.readLine().split(";");
+			l = br.readLine();
 		}
 		br.close();
 		

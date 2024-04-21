@@ -14,7 +14,7 @@ public class Inventario {
 	
 	//Constructor
 	public Inventario(Cargador cargador) throws IOException {
-		this.piezas = cargador.cargarInventario(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "administrador.csv");
+		this.piezas = cargador.cargarInventario("data" + File.separator + "piezas.csv");
 	}
 	
 	
