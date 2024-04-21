@@ -1,5 +1,7 @@
 package piezas;
 
+import java.util.List;
+
 import modelo.Pieza;
 import usuarios.Propietario;
 
@@ -7,7 +9,7 @@ public class Pintura extends Pieza{
 	
 	private String tecnica;
 	private String tipo;
-	private float peso;
+	private double peso;
 	
 	
 	public String getTecnica() {
@@ -22,19 +24,23 @@ public class Pintura extends Pieza{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public float getPeso() {
-		return peso;
+	public double getPeso() {
+		return  peso;
 	}
 	public void setPeso(float peso) {
 		this.peso = peso;
 	}
-	public Pintura(String idPieza, String titulo, String lugarCreacion, float ancho, float alto, String fechaLimite,
-			boolean valorFijo, Propietario propietario) {
-		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, propietario);
+	public Pintura(String idPieza, Propietario propietario,  String titulo,String lugarCreacion, double ancho, double alto, String fechaLimite,
+			boolean valorFijo, boolean valorinicial, List<String> autores,
+			Propietario anioCreacion, String tecnica, String tipo, double peso) {
+		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorinicial, autores, propietario,
+				anioCreacion);
 		// TODO Auto-generated constructor stub
 		this.tecnica=tecnica;
 		this.tipo=tipo;
 		this.peso=peso;
+	}
+	
 		
-}
+		
 }

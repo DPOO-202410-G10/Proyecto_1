@@ -1,5 +1,6 @@
 package piezas;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import modelo.Pieza;
@@ -7,13 +8,13 @@ import usuarios.Propietario;
 
 public class Escultura extends Pieza{
 
-	private float profundidad;
+	private double profundidad;
 	private List<String> materiales;
 	private boolean necesidadElectricidad;
-	public float getProfundidad() {
+	public double getProfundidad() {
 		return profundidad;
 	}
-	public void setProfundidad(float profundidad) {
+	public void setProfundidad(double profundidad) {
 		this.profundidad = profundidad;
 	}
 	public List<String> getMateriales() {
@@ -28,14 +29,17 @@ public class Escultura extends Pieza{
 	public void setNecesidadElectricidad(boolean necesidadElectricidad) {
 		this.necesidadElectricidad = necesidadElectricidad;
 	}
-	public Escultura(String idPieza, String titulo, String lugarCreacion, float ancho, float alto, String fechaLimite,
-			boolean valorFijo, Propietario propietario) {
-		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, propietario);
+	public Escultura(String idPieza, Propietario propietario,  String titulo,String lugarCreacion, double ancho, double alto, String fechaLimite,
+			boolean valorFijo, boolean valorinicial, List<String> autores,
+			Propietario anioCreacion, double profundidad,List materiales,boolean necesidadElectricidad) {
+		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorinicial, autores, propietario,
+				anioCreacion);
 		// TODO Auto-generated constructor stub
-		this.materiales=materiales;
+		this.materiales=new ArrayList<String>();
 		this.necesidadElectricidad=necesidadElectricidad;
-		this.profundidad=profundidad;
+		this.profundidad=(double) profundidad;
 	}
+	
 
 }
 	

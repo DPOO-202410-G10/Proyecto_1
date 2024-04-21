@@ -1,7 +1,6 @@
 package modelo;
 
 import usuarios.Cliente;
-import usuarios.Propietario;
 
 public class Pago {
 	private String idPago;
@@ -53,7 +52,7 @@ public class Pago {
 	
 	
 	public Pago(String idPago, String fecha, int iva, float precioFinal, Pieza pieza, Cliente cliente) {
-		super();
+
 		this.idPago = idPago;
 		this.fecha = fecha;
 		this.iva = iva;
