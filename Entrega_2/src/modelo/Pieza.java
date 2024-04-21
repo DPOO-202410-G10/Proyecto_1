@@ -12,7 +12,7 @@ public abstract class Pieza {
 	protected double alto;
 	protected String fechaLimite;
 	protected boolean valorFijo;
-	protected boolean valorinicial;
+	protected double valorinicial;
 	protected List<String> autores;
 	protected Propietario propietario;
 	protected Propietario anioCreacion;
@@ -66,16 +66,6 @@ public abstract class Pieza {
 		this.fechaLimite = fechaLimite;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public Propietario getAnioCreacion() {
 		return anioCreacion;
 	}
@@ -89,10 +79,10 @@ public abstract class Pieza {
 		this.valorFijo = valorFijo;
 	}
 
-	public boolean isValorinicial() {
+	public double isValorinicial() {
 		return valorinicial;
 	}
-	public void setValorinicial(boolean valorinicial) {
+	public void setValorinicial(double valorinicial) {
 		this.valorinicial = valorinicial;
 	}
 	
@@ -120,7 +110,7 @@ public abstract class Pieza {
 		this.propietario = propietario;
 	}
 	public Pieza(String idPieza, String titulo, String lugarCreacion, double ancho, double alto, String fechaLimite,
-			boolean valorFijo, boolean valorinicial, List<String> autores, Propietario propietario,
+			boolean valorFijo, double valorinicial, List<String> autores, Propietario propietario,
 			Propietario anioCreacion) {
 		super();
 		this.idPieza = idPieza;

@@ -13,15 +13,11 @@ public abstract class Usuario {
 	}
 	
 	protected void login() {
-		if (idUsuario == getIdUsuario() && contrasenia == getContrasenia() && nombre == getNombre()) {
+		if (idUsuario == getID() && contrasenia == getContrasenia() && nombre == getNombre()) {
 			System.out.println("Login aceptado.");
 		}else {
 			System.out.println("Login rechazado.");
 		}
-	}
-
-	public String getIdUsuario() {
-		return idUsuario;
 	}
 
 	public String getContrasenia() {
@@ -30,5 +26,9 @@ public abstract class Usuario {
 
 	public String getNombre() {
 		return nombre;
+	}
+	
+	public String getID(){
+		return idUsuario;
 	}
 }
