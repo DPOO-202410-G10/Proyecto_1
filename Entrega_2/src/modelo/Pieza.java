@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 import usuarios.Propietario;
 
 public abstract class Pieza {
@@ -10,8 +12,8 @@ public abstract class Pieza {
 	protected double alto;
 	protected String fechaLimite;
 	protected boolean valorFijo;
-	protected Propietario propietario;
-	
+	protected String idPropietario;
+	protected String[] autores;
 	
 	
 	
@@ -45,14 +47,17 @@ public abstract class Pieza {
 	public void setAlto(float alto) {
 		this.alto = alto;
 	}
-	public Propietario getPropietario() {
-		return propietario;
+	public String getPropietario() {
+		return this.idPropietario;
 	}
-	public void setPropietario(Propietario propietario) {
-		this.propietario = propietario;
+	public void setPropietario(String idPropietario) {
+		this.idPropietario = idPropietario;
 	}
+	
+	
+	
 	public Pieza(String idPieza, String idPropietario, String titulo, String lugarCreacion, double ancho, double alto, String fechaLimite,
-			boolean valorFijo, double valorInicial, String autores, String anioCreacion) {
+			boolean valorFijo, double valorInicial, String[] autores, String anioCreacion) {
 		super();
 		this.idPieza = idPieza;
 		this.titulo = titulo;
@@ -61,7 +66,7 @@ public abstract class Pieza {
 		this.alto = alto;
 		this.fechaLimite = fechaLimite;
 		this.valorFijo = valorFijo;
-		this.propietario = propietario;
+		this.idPropietario = idPropietario;
 	}
 	
 	

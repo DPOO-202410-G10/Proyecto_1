@@ -1,11 +1,14 @@
 package piezas;
 
+import java.util.List;
+
 import modelo.Pieza;
 import usuarios.Propietario;
 
 public class Fotografia extends Pieza{
 	private String tipo;
 
+	
 	public String getTipo() {
 		return tipo;
 	}
@@ -14,10 +17,11 @@ public class Fotografia extends Pieza{
 		this.tipo = tipo;
 	}
 
-	public Fotografia(String idPieza, String titulo, String lugarCreacion, float ancho, float alto, String fechaLimite,
-			boolean valorFijo, Propietario propietario) {
-		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, propietario);
-		// TODO Auto-generated constructor stub
+	
+	public Fotografia(String idPieza, String idPropietario, String titulo, String lugarCreacion, double ancho, double alto, String fechaLimite,
+			boolean valorFijo, double valorInicial, String[] autores, String anioCreacion, String tipo) {
+		
+		super(idPieza, idPropietario, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorInicial, autores, anioCreacion);
 		this.tipo=tipo;
 	}
 
