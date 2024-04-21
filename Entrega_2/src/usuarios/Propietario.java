@@ -1,5 +1,6 @@
 package usuarios;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -29,8 +30,15 @@ public class Propietario extends Usuario{
 	
 	
 	public List<Pieza> consultarPiezasBajoDominio(){
-		return null;
-		//TODO: FALTA CREAR METODO
+		List<Pieza> piezasBajoDom = new ArrayList<>();
+		for (Map<String, Pieza> categoria: piezas.values()) {
+			for (Pieza pieza: categoria.values()) {
+				if (pieza.getPropietario() == this) {
+					piezasBajoDom.add(pieza);
+				}
+			}
+		}
+		return piezasBajoDom;
 	}
 	
 	public List<Pieza> consultarPiezasAntiguas(){
