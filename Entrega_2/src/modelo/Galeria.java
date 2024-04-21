@@ -42,12 +42,12 @@ public class Galeria {
 		this.administrador = cargador.cargarAdmin(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "administrador.csv");
 		this.clientes = cargador.cargarClientes(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "clientes.csv");
 		cargador.cargarEmpleados(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "empleados.csv",
-					this.cajeros, this.operadores);
-		this.inventario = new Inventario();
+							this.cajeros, this.operadores);
+		this.inventario = new Inventario(cargador);
 		this.propietarios = cargador.cargarPropietarios(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "propietarios.csv",
 							this.inventario);
 		this.pagos = cargador.cargarPagos(File.separator + "Entrega_2" + File.separator + "data" + File.separator + "pagos.csv",
-					this.clientes, this.inventario);
+							this.clientes, this.inventario);
 	}
 //<x=============================================================================================================x>
 	

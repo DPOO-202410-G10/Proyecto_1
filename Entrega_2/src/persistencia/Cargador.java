@@ -19,7 +19,7 @@ import usuarios.Operador;
 import usuarios.Propietario;
 
 public class Cargador {
-	public void Cargador() {
+	public Cargador() {
 	}
 	
 //< Carga de Datos Individuales >================================================================================x>
