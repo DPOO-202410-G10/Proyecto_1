@@ -1,6 +1,7 @@
 package usuarios;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -41,8 +42,20 @@ public class Propietario extends Usuario{
 		return piezasBajoDom;
 	}
 	
+	private Map<Pieza, List<Propietario>> historialPropietarios = new HashMap<>();
+	
+	public void agregarHistorialPropietarios(Pieza pieza, List<Propietario> propAnterior) {
+		historialPropietarios.put(pieza, propAnterior);
+	}
+	
 	public List<Pieza> consultarPiezasAntiguas(){
-		return null;
-		//TODO: FALTA CREAR METODO
+		List<Pieza> piezasAntiguas = new ArrayList<>();
+		for (Map.Entry<Pieza, List<Propietario>> entry: historialPropietarios.entrySet()) {
+			List<Propietario> propAnterior = entry.getValue();
+			if (propAnterior.contains(this)) {
+				piezasAntiguas.add(entry.getKey());
+			}
+		}
+		return piezasAntiguas;
 	}
 }
