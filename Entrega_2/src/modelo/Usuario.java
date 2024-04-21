@@ -28,7 +28,7 @@ public abstract class Usuario {
 		return nombre;
 	}
 	
-	public String getId(){
+	public String getID(){
 		return idUsuario;
 	}
 }
