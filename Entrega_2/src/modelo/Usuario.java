@@ -29,6 +29,6 @@ public abstract class Usuario {
 	}
 	
 	public String getID(){
-		return idUsuario;
+		return this.idUsuario;
 	}
 }

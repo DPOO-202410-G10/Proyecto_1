@@ -12,6 +12,7 @@ public class Propietario extends Usuario{
 
 	public Propietario(String idUsuario, String contrasenia, String nombre, 
 			boolean esComprador, String telefono, String direccion, Map<String, Map<String, Pieza>> piezas) {
+		
 		super(idUsuario, contrasenia, nombre);
 		this.esComprador = esComprador;
 		this.telefono = telefono;
@@ -34,7 +35,7 @@ public class Propietario extends Usuario{
 		List<Pieza> piezasBajoDom = new ArrayList<>();
 		for (Map<String, Pieza> categoria: piezas.values()) {
 			for (Pieza pieza: categoria.values()) {
-				if (pieza.getPropietario() == this) {
+				if (pieza.getPropietario() == this.getID()) {
 					piezasBajoDom.add(pieza);
 				}
 			}

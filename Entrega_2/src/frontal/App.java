@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import modelo.Galeria;
+
 public class App {
 	public App() {
 	}
@@ -45,7 +47,7 @@ public class App {
 	}
 	
 	
-	public void menu() {
+	public void menu(Galeria galeria) {
 		Boolean mostrar = true;
 		String opcion;
 		do {
@@ -82,9 +84,11 @@ public class App {
 	
 	
 //< MAIN >=======================================================================================================x>
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		App aplicacion = new App();
-		aplicacion.menu();
+		Galeria galeria = new Galeria("Galeria Alpes");
+		galeria.cargarDatos();
+		aplicacion.menu(galeria);
 	}
 //<x=============================================================================================================x>	
 	

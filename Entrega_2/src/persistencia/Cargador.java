@@ -41,15 +41,16 @@ public class Cargador {
 		
 		FileReader file = new FileReader(rutaArchivo);
 		BufferedReader br = new BufferedReader(file);
-		String[] linea = br.readLine().split(";");
-		linea = br.readLine().split(";");
+		String l = br.readLine(); l = br.readLine();
+		String[] linea;
 		
-		while(linea != null) {
+		while(l != null) {
+			linea = l.split(";");
 			Cliente cliente = new Cliente(linea[0], linea[1], linea[2], 
 								Boolean.parseBoolean(linea[3]), linea[4], linea[5], 
 								Integer.parseInt(linea[6]));
 			clientes.put(linea[0], cliente);
-			linea = br.readLine().split(";");
+			l = br.readLine();
 		}
 		br.close();
 		return clientes;
@@ -63,10 +64,11 @@ public class Cargador {
 		
 		FileReader file = new FileReader(rutaArchivo);
 		BufferedReader br = new BufferedReader(file);
-		String[] linea = br.readLine().split(";");
-		linea = br.readLine().split(";");
+		String l = br.readLine(); l = br.readLine();
+		String[] linea;
 		
-		while(linea != null) {
+		while(l != null) {
+			linea = l.split(";");
 			if(linea[3].equals("Cajero")) {
 				Cajero empleado = new Cajero(linea[0], linea[1], linea[2]);
 				cajerosCarga.put(linea[0], empleado);
@@ -74,7 +76,7 @@ public class Cargador {
 				Operador empleado = new Operador(linea[0], linea[1], linea[2]);
 				operadoresCarga.put(linea[0], empleado);
 			}
-			linea = br.readLine().split(";");
+			l = br.readLine();
 		}
 		
 		br.close();

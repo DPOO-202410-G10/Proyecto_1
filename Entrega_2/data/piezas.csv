@@ -1,0 +1,5 @@
+idPieza;idPropietario;titulo;lugarCreacion;ancho;alto;fechaLimite;valorFijo;valorInicial;[autores];anioCreacion;tipo;[caracteristicasTipo];estado
+1;3425;Flores Amarillas;Allá;8.1;7.1;20250111;false;0;UnaCantidad,PeroNoTantos;2020;impresion;Carton Fibroso;exhibida
+2;3428;Cielo Estrellado;Acá;10;10;20260307;true;345000;Carlos Magno, Fernandez Pemdas, Rodrigo Martinez;2012;pintura;Oleo;Paisaje;5.6;bodega
+3;3349;Azulejos de Carbon;UnPocoAqui;5.6;8;20240513;false;0;Anonimo;2000;escultura;5.6;Carbon, Arcilla, Granito, Cuarzo;true;antigua
+4;3431;Montaña Rustica;NingunLado;3;3.2;20241205;true;100000;Anonimo;2014;fotografia;paisaje;bloqueada

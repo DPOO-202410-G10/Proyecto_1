@@ -14,7 +14,7 @@ public class Pago {
 	
 	
 	
-	public String getIdPago() {
+	public String getID() {
 		return idPago;
 	}
 	public void setIdPago(String idPago) {
