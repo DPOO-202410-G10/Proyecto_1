@@ -51,9 +51,11 @@ public abstract class Pieza {
 	public void setPropietario(Propietario propietario) {
 		this.propietario = propietario;
 	}
+	
+	
 	public Pieza(String idPieza, String idPropietario, String titulo, String lugarCreacion, double ancho, double alto, String fechaLimite,
-			boolean valorFijo, double valorInicial, String autores, String anioCreacion) {
-		super();
+			boolean valorFijo, double valorInicial, String autores, String anioCreacion, Propietario propietario) {
+
 		this.idPieza = idPieza;
 		this.titulo = titulo;
 		this.lugarCreacion = lugarCreacion;
