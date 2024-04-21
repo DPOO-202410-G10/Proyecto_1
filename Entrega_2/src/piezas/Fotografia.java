@@ -25,7 +25,4 @@ public class Fotografia extends Pieza{
 		this.tipo=tipo;
 	}
 
-	
-	
-
 }
