@@ -10,7 +10,7 @@ public class Pago {
 	private Pieza pieza;
 	private Cliente cliente;
 	
-	
+	//hola mundo como estan yo estoy muy mal
 	
 	
 	public String getIdPago() {
