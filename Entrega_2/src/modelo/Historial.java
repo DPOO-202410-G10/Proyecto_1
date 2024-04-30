@@ -7,26 +7,25 @@ import java.util.Map;
 
 public class Historial {
 
-	private String idSubasta;
+	private String idHistorial;
     private Pieza pieza;
     private Map<Integer, String> historial; 
-    private int valorPuja;
-    private int idComprador;
     
     
     
-    public Historial(String idSubasta, Pieza pieza, Map<Integer, String> historial, int valorPuja, int idComprador) {
-        this.idSubasta = idSubasta;
+    public Historial(String idHistorial, Pieza pieza, Map<Integer, String> historial) {
+    	this.idHistorial = idHistorial;
         this.pieza = pieza;
-        this.historial = new HashMap<>();
-        this.valorPuja= valorPuja;
-        this.idComprador=idComprador;
-        
+        this.historial = historial;     
     }
     
     
     public void agregarAlMapa(int valorPuja, String idComprador) {
         historial.put(valorPuja, idComprador);
+    }
+    
+    public String getId() {
+    	return this.idHistorial;
     }
     
   

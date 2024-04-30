@@ -1,44 +1,56 @@
 package modelo;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
+import usuarios.Cliente;
 
 public class Subasta {
-    private int idSubasta;
-    private List<Pieza> piezas;
-    private List<Historial> historiales;
+    private String idSubasta;
+    private boolean estadoActivo;
+    private Map<String, Pieza> piezas;
+    private Map<String, Cliente> clientes;
+    private Map<String, Historial> historiales;
 
-    public Subasta(int idSubasta, Pieza pieza, Historial historial) {
+    public Subasta(String idSubasta, boolean estadoActivo, Map<String, Pieza> piezas, Map<String, Cliente> clientes, Map<String, Historial> historiales) {
         this.idSubasta = idSubasta;
-        this.piezas = new ArrayList<>();
-        this.historiales = new ArrayList<>();
-
-        this.piezas.add(pieza);
-        this.historiales.add(historial);
+        this.estadoActivo = estadoActivo;
+        this.piezas = piezas;
+        this.clientes = clientes;
+        this.historiales = historiales;
     }
-
-    public List<Pieza> getPiezas() {
-        return piezas;
+    
+    public Subasta(String idSubasta, Map<String, Pieza> piezas, Map<String, Cliente> clientes) {
+    	this.idSubasta = idSubasta;
+    	this.estadoActivo = true;
+    	this.piezas = piezas;
+    	this.clientes = clientes;
+    	this.historiales = new HashMap<String, Historial>();
     }
-
-    public List<Historial> getHistoriales() {
-        return historiales;
-    }
+    
 
     public void addPieza(Pieza pieza) {
-        this.piezas.add(pieza);
+        this.piezas.put(pieza.getIdPieza(), pieza);
     }
 
-    public void removePieza(Pieza pieza) {
-        this.piezas.remove(pieza);
+    public void removePieza(String idPieza) {
+        this.piezas.remove(idPieza);
     }
 
     public void addHistorial(Historial historial) {
-        this.historiales.add(historial);
+        this.historiales.put(historial.getId(), historial);
     }
 
-    public void removeHistorial(Historial historial) {
-        this.historiales.remove(historial);
+    public void removeHistorial(String idHistorial) {
+        this.historiales.remove(idHistorial);
+    }
+    
+    public boolean getEstado() {
+    	return this.estadoActivo;
+    }
+    
+    public boolean estaCliente(String idCliente) {
+    	return this.clientes.containsKey(idCliente);
     }
 }
 
