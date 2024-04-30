@@ -16,15 +16,15 @@ public class Impresion extends Pieza{
 		this.material = material;
 	}
 
-	public Impresion(String idPieza, String idPropietario, String titulo, String lugarCreacion, double ancho, double alto, String fechaLimite,
-			boolean valorFijo, double valorInicial, String[] autores, String anioCreacion, String material) {
-
-		super(idPieza, idPropietario, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorInicial, autores, anioCreacion);
+	public Impresion(String idPieza, Propietario propietario,  String titulo,String lugarCreacion, double ancho, double alto, String fechaLimite,
+			boolean valorFijo, double valorinicial, List<String> autores,
+			Propietario anioCreacion, String material) {
+		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorinicial, autores, propietario,
+				anioCreacion);
+		// TODO Auto-generated constructor stub
 		this.material=material;
 	}
 
 	
-	
-
 	
 }

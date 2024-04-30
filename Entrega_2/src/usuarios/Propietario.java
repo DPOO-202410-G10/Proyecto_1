@@ -35,7 +35,7 @@ public class Propietario extends Usuario{
 		List<Pieza> piezasBajoDom = new ArrayList<>();
 		for (Map<String, Pieza> categoria: piezas.values()) {
 			for (Pieza pieza: categoria.values()) {
-				if (pieza.getPropietario() == this.getID()) {
+				if (pieza.getPropietario().getID() == this.getID()) {
 					piezasBajoDom.add(pieza);
 				}
 			}

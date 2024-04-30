@@ -25,21 +25,19 @@ public class Pintura extends Pieza{
 		this.tipo = tipo;
 	}
 	public double getPeso() {
-		return peso;
+		return  peso;
 	}
 	public void setPeso(float peso) {
 		this.peso = peso;
 	}
-	
-	
-	
-	public Pintura(String idPieza, String idPropietario, String titulo, String lugarCreacion, double ancho, double alto, String fechaLimite,
-			boolean valorFijo, double valorInicial, String[] autores, String anioCreacion, String tecnica, String tipo, double peso) {
-		
-		super(idPieza, idPropietario, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorInicial, autores, anioCreacion);
+	public Pintura(String idPieza, Propietario propietario,  String titulo,String lugarCreacion, double ancho, double alto, String fechaLimite,
+			boolean valorFijo, double valorinicial, List<String> autores,
+			Propietario anioCreacion, String tecnica, String tipo, double peso) {
+		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorinicial, autores, propietario,
+				anioCreacion);
+		// TODO Auto-generated constructor stub
 		this.tecnica=tecnica;
 		this.tipo=tipo;
 		this.peso=peso;
-		
-}
+	}
 }
