@@ -7,40 +7,52 @@ import modelo.Pieza;
 import usuarios.Propietario;
 
 public class Escultura extends Pieza{
-
+	//< Atributos >
 	private double profundidad;
-	private List<String> materiales;
+	private String[] materiales;
 	private boolean necesidadElectricidad;
+	
+	
+	//< Constructor >
+	public Escultura(String idPieza, String idPropietario,  String titulo, String lugarCreacion, double ancho, double alto, String fechaLimite,
+			boolean valorFijo, double valorinicial, String[] autores, String anioCreacion, double profundidad, String[] materiales,boolean necesidadElectricidad) {
+
+		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorinicial, autores, idPropietario, anioCreacion);
+		this.materiales = materiales;
+		this.necesidadElectricidad = necesidadElectricidad;
+		this.profundidad = profundidad;
+	}
+	
+	
+	
+//< Getters >=====================================================================================================x>
 	public double getProfundidad() {
 		return profundidad;
 	}
-	public void setProfundidad(double profundidad) {
-		this.profundidad = profundidad;
-	}
-	public List<String> getMateriales() {
+	
+	public String[] getMateriales() {
 		return materiales;
-	}
-	public void setMateriales(List<String> materiales) {
-		this.materiales = materiales;
 	}
 	public boolean isNecesidadElectricidad() {
 		return necesidadElectricidad;
 	}
+//<x==============================================================================================================x>
+	
+	
+	
+//< Setters >=====================================================================================================x>
+	public void setProfundidad(double profundidad) {
+		this.profundidad = profundidad;
+	}
+	
+	public void setMateriales(String[] materiales) {
+		this.materiales = materiales;
+	}
+	
 	public void setNecesidadElectricidad(boolean necesidadElectricidad) {
 		this.necesidadElectricidad = necesidadElectricidad;
 	}
-	public Escultura(String idPieza, Propietario propietario,  String titulo,String lugarCreacion, double ancho, double alto, String fechaLimite,
-			boolean valorFijo, double valorinicial, List<String> autores,
-			Propietario anioCreacion, double profundidad,List materiales,boolean necesidadElectricidad) {
-		super(idPieza, titulo, lugarCreacion, ancho, alto, fechaLimite, valorFijo, valorinicial, autores, propietario,
-				anioCreacion);
-		// TODO Auto-generated constructor stub
-		this.materiales=new ArrayList<String>();
-		this.necesidadElectricidad=necesidadElectricidad;
-		this.profundidad=(double) profundidad;
-	}
-	
-
+//<x==============================================================================================================x>
 }
 	
 	

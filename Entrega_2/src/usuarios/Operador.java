@@ -4,14 +4,14 @@ import modelo.Usuario;
 
 public class Operador extends Usuario{
 
-	public String idUsuario;
-	public String contrasenia;
-	public String nombre;
-	
+	//< Constructor >
 	public Operador(String idUsuario, String contrasenia, String nombre) {
 		super(idUsuario, contrasenia, nombre);
 	}
 	
+	
+	
+//< Metodos >=====================================================================================================x>
 	public void crearHistorial(String tituloPieza) {
 		//TODO: FALTA CREAR METODO!
 	}
@@ -24,4 +24,5 @@ public class Operador extends Usuario{
 		//TODO: FALTA CREAR METODO
 		return null;
 	}
+//<x==============================================================================================================x>
 }

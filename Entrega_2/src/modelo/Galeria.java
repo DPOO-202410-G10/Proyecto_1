@@ -13,7 +13,7 @@ import usuarios.Operador;
 import usuarios.Propietario;
 
 public class Galeria {
-	//Atributos
+	//< Atributos >
 	String nombre;
 	Administrador administrador;
 	Inventario inventario;
@@ -26,7 +26,7 @@ public class Galeria {
 	
 	
 	
-	//Constructor
+	//< Constructor >
 	public Galeria(String nombre) {
 		this.nombre = nombre;
 	}
@@ -105,9 +105,11 @@ public class Galeria {
 		}
 	}
 	
+	
 	public void addPieza(Pieza pieza) {
 		this.inventario.addPieza(pieza);
 	}
+	
 	
 	public void addPago(Pago pago) throws Exception {
 		this.pagos.put(pago.getID(), pago);

@@ -135,8 +135,7 @@ public class Cargador {
 		return piezasCargar;
 	}
 	
-	
-	
+	//<x========================================================================================================x>
 	
 	public Map<String, Propietario> cargarPropietarios(String rutaArchivo, Inventario inventario) throws IOException{
 		Map<String, Propietario> propietarios = new HashMap<String, Propietario>();

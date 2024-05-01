@@ -6,13 +6,16 @@ import java.util.Map;
 import usuarios.Cliente;
 
 public class Subasta {
+	//< Atributos >
     private String idSubasta;
-    private boolean estadoActivo;
+    private String estadoActivo;
     private Map<String, Pieza> piezas;
     private Map<String, Cliente> clientes;
     private Map<String, Historial> historiales;
 
-    public Subasta(String idSubasta, boolean estadoActivo, Map<String, Pieza> piezas, Map<String, Cliente> clientes, Map<String, Historial> historiales) {
+    
+    //< Contructor >
+    public Subasta(String idSubasta, String estadoActivo, Map<String, Pieza> piezas, Map<String, Cliente> clientes, Map<String, Historial> historiales) {
         this.idSubasta = idSubasta;
         this.estadoActivo = estadoActivo;
         this.piezas = piezas;
@@ -20,15 +23,22 @@ public class Subasta {
         this.historiales = historiales;
     }
     
-    public Subasta(String idSubasta, Map<String, Pieza> piezas, Map<String, Cliente> clientes) {
+    //< Contructor >
+    public Subasta(String idSubasta) {
     	this.idSubasta = idSubasta;
-    	this.estadoActivo = true;
-    	this.piezas = piezas;
-    	this.clientes = clientes;
+    	this.estadoActivo = "Pendiente";
     	this.historiales = new HashMap<String, Historial>();
     }
     
 
+    
+//< Metodos >=====================================================================================================x>
+    public void activarSubasta(Map<String, Pieza> piezas, Map<String, Cliente> clientes) {
+    	this.estadoActivo = "Activo";
+    	this.piezas = piezas;
+    	this.clientes = clientes;
+    }
+    
     public void addPieza(Pieza pieza) {
         this.piezas.put(pieza.getIdPieza(), pieza);
     }
@@ -45,13 +55,14 @@ public class Subasta {
         this.historiales.remove(idHistorial);
     }
     
-    public boolean getEstado() {
+    public String getEstado() {
     	return this.estadoActivo;
     }
     
     public boolean estaCliente(String idCliente) {
     	return this.clientes.containsKey(idCliente);
     }
+//<x==============================================================================================================x>
 }
 
 		

@@ -7,15 +7,15 @@ import modelo.Usuario;
 import usuarios.Cliente;
 
 public class Administrador extends Usuario {
-
-	public String idUsuario;
-	public String contrasenia;
-	public String nombre;
 	
+	//< Constructor >
 	public Administrador(String idUsuario, String contrasenia, String nombre) {
 		super(idUsuario, contrasenia, nombre);
 	}
 	
+
+	
+//< Metodos >=====================================================================================================x>
 	public void crearSubasta(Map<String, Cliente> clientes, Map<String, Pieza> piezas) {
 		//TODO: FALTA CREAR MÉTODO
 	}
@@ -39,7 +39,6 @@ public class Administrador extends Usuario {
 		}else {
 			System.out.println("Aumento de compras rechazado.");
 		}return cantidadCompras;
-		
-
 	}
+//<x==============================================================================================================x>
 }

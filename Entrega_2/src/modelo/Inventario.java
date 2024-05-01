@@ -7,12 +7,11 @@ import java.util.Map;
 import persistencia.Cargador;
 
 public class Inventario {
-	//Atributos
+	//< Atributos >
 	Map<String, Map<String, Pieza>> piezas;
 	
 	
-	
-	//Constructor
+	//< Constructor >
 	public Inventario(Cargador cargador) throws IOException {
 		this.piezas = cargador.cargarInventario("data" + File.separator + "piezas.csv");
 	}
